@@ -1,7 +1,7 @@
 /*NAME : AVINASH AGARWAL
   ROLL NO : 17CS8065
   DATE OF ASSIGNMENT : 25/01/2019
-  ASSIGNMENT NAME : ADDITION/SUBTRACTION/MULTIPLICATION USING FILES*/
+  ASSIGNMENT NAME :  LARGE NUMBER ARITHMETIC*/
 
 #include<iostream>
 #include<string.h>
@@ -9,6 +9,7 @@
 #define ll long long
 using namespace std;
 
+// Function to add numbers
 string add(string first_num, string second_num)
 {
 	ll int i = first_num.length()-1;
@@ -66,6 +67,7 @@ string add(string first_num, string second_num)
 	return ans;
 }
 
+// Function to subtract numbers
 string subtract(string first_num, string second_num, int reverse)
 {
 	ll int i = first_num.length()-1;
@@ -130,65 +132,7 @@ string subtract(string first_num, string second_num, int reverse)
 	}
 }
 
-string compare(string first_num, string second_num)
-{
-	ll int i = first_num.length()-1;
-	ll int j = second_num.length()-1;
-	ll int borrow = 0;
-	string ans = "";
-	while(i>=0 && j>=0)
-	{
-		ll int num = (first_num[i] - '0') - (second_num[j] - '0') - borrow;
-		if(num < 0)
-		{
-			borrow = 1;
-			ans = char((10+num) + '0') + ans;
-		}
-		else
-		{
-			borrow = 0;
-			ans = char(num + '0') + ans;
-		}
-		i--;
-		j--;
-	}
-	while(i>=0)
-	{
-		ll int num = (first_num[i] - '0') - borrow;
-		if(num < 0)
-		{
-			borrow = 1;
-			ans = char((10+num) + '0') + ans;
-		}
-		else
-		{
-			borrow = 0;
-			ans = char(num + '0') + ans;
-		}
-		i--;
-	}
-	while(j>=0)
-	{
-		ll int num = (second_num[j] - '0') - borrow;
-		if(num < 0)
-		{
-			borrow = 1;
-			ans = char((10+num) + '0') + ans;
-		}
-		else
-		{
-			borrow = 0;
-			ans = char(num + '0') + ans;
-		}
-		if(j==0)
-			ans = '-' + ans;
-		j--;
-	}
-	if(borrow == 1)
-		ans = '-' + ans;
-	return ans;
-}
-
+// Function to multiply numbers
 string multiply( string first_num, string second_num) 
 {
 	ll int i = first_num.length()-1;
@@ -242,7 +186,7 @@ int main()
 	f>>second_num;
 	f.close();
 	ll int choice;
-	cout<<"Enter 1 to Add.\nEnter 2 to Subtract.\nEnter 3 to Multiply.\nEnter 4 to Divide.\n";
+	cout<<"Enter 1 to Add.\nEnter 2 to Subtract.\nEnter 3 to Multiply.\n";
 	cin>>choice;
 	string ans = "Try Again!";
 	switch(choice)

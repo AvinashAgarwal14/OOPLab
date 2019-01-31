@@ -1,7 +1,7 @@
 /*NAME : AVINASH AGARWAL
   ROLL NO : 17CS8065
   DATE OF ASSIGNMENT : 25/01/2019
-  ASSIGNMENT NAME : INDENTATION*/
+  ASSIGNMENT NAME : FILE INDENTATION*/
 
 #include<stdio.h>
 #include<iostream>
@@ -19,8 +19,10 @@ int main()
 	while(f)
 	{
 		getline(f, line);
+		// To decrement space if a '}' is encountered
 		if(line == "}")
 			space--;
+		// Adding the required number of spaces
 		if(space > 0)
 			{
 				int temp = space;
@@ -29,6 +31,7 @@ int main()
 			}
 		ll int i = 0;
 		ll int len = line.length()-1;
+		// To increment space if a '{' is encountered
 		while(i<=len)
 			{ 
 				if(line[i]=='{')

@@ -153,6 +153,8 @@ int main()
 	string num;
 	cin>>num;
 	string ans = "1";
+	// Subtracting 1 from the number and multiplying it with the answer
+	// to get the required factorial
 	while(num!="0")
 	{
 		ans = multiply(num, ans);

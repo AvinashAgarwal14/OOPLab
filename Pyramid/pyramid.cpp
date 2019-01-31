@@ -1,3 +1,8 @@
+/*NAME : AVINASH AGARWAL
+  ROLL NO : 17CS8065
+  DATE OF ASSIGNMENT : 25/01/2019
+  ASSIGNMENT NAME : PYRAMID PATTERNS*/
+
 #include<iostream>
 #include<iomanip>
 using namespace std;
