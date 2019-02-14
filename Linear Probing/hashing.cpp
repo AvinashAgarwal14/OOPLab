@@ -12,17 +12,14 @@ int main()
 {
 	srand(time(0));
 	ll int batch_misses[6];
-
 	for(int num=20;num<=100;num+=20)
 	{
 
-		int hashtable[100];
-		
+		int *hashtable= new int[100];
 		for(int i=0;i<100;i++)
 			hashtable[i]=-1;
 		
 		int total_miss=0;
-
 		for(int i=1;i<=num;i++)
 		{
 			int x=rand();
@@ -40,14 +37,20 @@ int main()
 			total_miss+=miss;
 		}
 		batch_misses[num/20]=total_miss;
+		cout<<"Total Number of misses for batch of "<<num<<" elements: "<<total_miss<<"\n";
+		cout<<"Hash table for "<<num<<" Elemnets:\n";
+		for(int i = 0; i< 100;i++)
+			cout<<hashtable[i]<<"  ";
+		cout<<"\n\n";
+		delete hashtable;
 	}
 	
+	// Calculation of Mean and Variance
 	int a=0,b=0;
 	for(int i=1;i<=5;i++)
 	{
 		a+=batch_misses[i];
 		b+=batch_misses[i]*batch_misses[i];
-		cout<<"Number of misses for a batch of "<<i*20<<" elements: "<<batch_misses[i]<<endl;
 	}
 	float avg=(float)a/5;
 	cout<<"Average Miss: "<<avg<<"\n";
